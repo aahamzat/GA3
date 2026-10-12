@@ -5,8 +5,8 @@ set -euo pipefail
 CONTAINER=oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20
 
 # Copy the placeholder variables
-fastq="/fs/ess/PAS3493/people/abdulafees007/GA3/results/fastqc/"
-outdir="/fs/ess/PAS3493/people/abdulafees007/GA3/results/multiqc/"
+fastq="$1"
+outdir="$2"
 
 # Initial logging
 echo "Starting script multiqc.sh"

@@ -167,19 +167,22 @@ Code to run `multiqc --help` with the container:
 
 ```bash
 # Your command:
-```
+apptainer run oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20
 
-<!-- You don't need to paste the MultiQC help output -->
+#Run in Singularity GNU
+multiqc --help 
+
+```
 
 The MultiQC command to run MultiQC on `results/fastqc` with output in `results/multiqc`:
 
 ```bash
 # Your command:
+multiqc -o results/fastqc results/multiqc
 ```
 
 ### 10: Write the `multiqc.sh` script
 
-<!-- No need to paste the script: we'll look at scripts/multiqc.sh directly. -->
 
 ### 11: Run `multiqc.sh`
 
@@ -187,17 +190,20 @@ Code to run the script:
 
 ```bash
 # Your command:
+bash scripts/multiqc.sh
 ```
 
-<!-- You don't need to paste the MultiQC logging output -->
 
 *Answer*: Number of FastQC reports MultiQC found:
 
+> Found 44 reports
+
 *Answer*: Does that match what you expected? Why/why not?
+
+> Yes. Because there are only 44 `.html` files which are the input files for `multiqc`.
 
 ### 12: Make `multiqc.sh` accept arguments, and rerun it
 
-<!-- No need to paste the script: we'll look at scripts/multiqc.sh and its Git history directly. -->
 
 Code to rerun the script:
 
