@@ -1,17 +1,4 @@
-<!--
-GA3 README template.
-- Add your answers to each question's section below.
-- For each question where we want you to add your commands,
-  put the command(s) you ran in the terminal in the corresponding ```bash code block.
-- Where we want to see a command's output, there is a plain ``` code block
-  right below the command block: paste the output there.
-- You don't need to paste the contents of your scripts into this file:
-  we will look at the scripts in your `scripts` dir directly
-  (so make sure you commit them!).
-- Delete instructional comments like this one as you go.
--->
-
-# GA3 answers - <your-name>
+# GA3 answers - Abdulafees Hamzat
 
 ------------------------------------------------------------------------
 
@@ -19,15 +6,9 @@ GA3 README template.
 
 ### 1: Create subdirs and copy files
 
-<!-- No command/output needed -- you can make dirs however you want, and the copy commands are provided. -->
-
 ### 2: Initialize a Git repository, and commit the README and `.gitignore`
 
-<!-- No command/output needed here -- we check the repo directly. -->
-
 ### 3: Commit throughout the assignment
-
-<!-- No command/output needed here -- we check your commit history directly. -->
 
 ------------------------------------------------------------------------
 
@@ -35,15 +16,50 @@ GA3 README template.
 
 ### 4: Predict the output of `echo.sh`
 
-<!-- No need to paste the script: we'll look at scripts/echo.sh directly. -->
 
-*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08`):
+*Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08`): 
+
+```
+  Oct7
+  Oct8
+
+  Finished
+
+#The command will print the first and second variables but empty line for third as it wasn't provided
+```
 
 *Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10`):
 
+```
+  Oct7
+  Oct8
+  Oct09
+  Finished
+
+#The command will print first three variables provided but omit the last one
+```
+
 *Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"`):
 
+```
+  Oct7
+  Oct8
+  Oct09 Oct10
+  Finished
+
+#The command will print the first and second variables and the variables in quotation as a single variable
+```
+
 *Answer* (prediction and reasoning for `bash scripts/echo.sh results/fastqc/*.html`):
+
+```
+  results/fastqc/*.html
+  
+
+  Finished
+
+#The command will print the argument as the first variable but empty line for second and third as it wasn't provided
+```
 
 ### 5: Run `echo.sh` and compare with your predictions
 
@@ -53,7 +69,10 @@ bash scripts/echo.sh Oct07 Oct08
 
 The output of the command was:
 
-```         
+``` 
+Oct07
+Oct08
+scripts/echo.sh: line 6: $3: unbound variable
 ```
 
 ```bash
@@ -62,7 +81,11 @@ bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10
 
 The output of the command was:
 
-```         
+```    
+Oct07
+Oct08
+Oct09
+Finished     
 ```
 
 ```bash
@@ -71,7 +94,11 @@ bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"
 
 The output of the command was:
 
-```         
+```
+Oct07
+Oct08
+Oct09 Oct10
+Finished         
 ```
 
 ```bash
@@ -80,14 +107,21 @@ bash scripts/echo.sh results/fastqc/*.html
 
 The output of the command was:
 
-```         
+```  
+results/fastqc/S63_R1_fastqc.html
+results/fastqc/S63_R2_fastqc.html
+results/fastqc/S64_R1_fastqc.html
+Finished
+#The command picked the first three `.html` file in `results/fastqc/`. I am not aware the script can run on any specified dir
 ```
 
 *Answer*: Which output (if any) differed from your prediction, and why?
 
+> 1. In the first command, I forgot about the `set` command that will prevent the script from runnig beyond the error (third variable not provided).
+> 2. In the last command, the command picked the first three `.html` file in `results/fastqc/`. I am not aware the script can run on any specified dir.
+
 ### 6: Write the `printline.sh` script
 
-<!-- No need to paste the script: we'll look at scripts/printline.sh directly. -->
 
 ### 7: Test `printline.sh` twice
 
@@ -95,22 +129,28 @@ Test 1:
 
 ```bash
 # Your command:
+bash scripts/printline.sh data/metadata.tsv
 ```
 
 The output of the command was:
 
-```         
+```
+Line number:
+S79     10dpi   cathemerium
 ```
 
 Test 2 (with redirection), and checking the contents of the output file:
 
 ```bash
 # Your command:
+bash scripts/printline.sh data/metadata.tsv results/line_number.txt
 ```
 
 The output of the command that checks the file contents was:
 
-```         
+```
+Line number:
+S79     10dpi   cathemerium        
 ```
 
 ------------------------------------------------------------------------
