@@ -209,13 +209,14 @@ Code to rerun the script:
 
 ```bash
 # Your command:
+bash scripts/multiqc.sh results/fastqc/ results/multiqc/
 ```
-
-<!-- No need to paste any output -->
 
 ### 13: Differences between the two MultiQC runs
 
 *Answer*:
+
+Yes. This is due to the existing files from previous run. It requires an `-f` option to overwrite the previous ones.
 
 ------------------------------------------------------------------------
 
