@@ -216,7 +216,7 @@ bash scripts/multiqc.sh results/fastqc/ results/multiqc/
 
 *Answer*:
 
-Yes. This is due to the existing files from previous run. It requires an `-f` option to overwrite the previous ones.
+> Yes. This is due to the existing files from previous run. It requires an `-f` option to overwrite the previous ones.
 
 ------------------------------------------------------------------------
 
@@ -226,7 +226,13 @@ Yes. This is due to the existing files from previous run. It requires an `-f` op
 
 *Answer* (options and arguments, and what each does):
 
+> `-o` tells `pandoc` to create an output file
+> `README.pdf` tells `pandoc` to create a `.pdf` as output
+> `README.md` tells `pandoc` to take a `.md` as input
+
 *Answer* (how does Pandoc know which output format to produce?):
+
+> It only takes a `.md` as an input file.
 
 ### 15: Render your README to PDF and HTML
 
@@ -238,21 +244,24 @@ pandoc -o README.pdf README.md
 
 ```bash
 # Your command:
+pandoc -o README.html README.md
 ```
 
 ### 16: Should the rendered files be committed?
 
 *Answer*: Should the rendered files be committed to your Git repo? Why/why not?
 
+> No. These are output files that can be generated from the 'source' file, the `.md` file.
+
 ### 17: Install the PDF Viewer extension and view the PDF
 
 *Answer*: One observation about the rendered PDF file:
 
+> Some of the text were cut-off and also the code junks aren't differentiated from other text.
+
 ## Part E: Publish your repo on GitHub
 
 ### 18: Create a GitHub repository
-
-<!-- No command/output needed here -- we check your GitHub repo directly. -->
 
 ### 19: Connect your local repo to GitHub, and push
 
